@@ -46,6 +46,7 @@ List += := method(v,
 
 Gnavi := Object clone do(
 
+    // https not supported ...
     base_url := "http://api.gnavi.co.jp/RestSearchAPI/20150630"
 
     buildUrl := method(token, options,
