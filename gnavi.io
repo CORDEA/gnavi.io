@@ -102,11 +102,11 @@ run := method(opts,
 
 gnavi := method(
     parser := OptionParser with(
-        list("a", "area", "AREAS3102", ""),
-        list("r", "range", 0, ""),
-        list("l", "location", "0:0", "")
+        list("a", "area", "AREAS3102", "area S code. See http://api.gnavi.co.jp/api/manual/areasmaster/."),
+        list("r", "range", 0, "search range. 1:300m, 2:500m, 3:1000m, 4:2000m, 5:3000m."),
+        list("l", "location", "0:0", "your location. latitude:longitude")
     ) setDescription(
-        ""
+        "restaurant search command."
     ) setUsage("")
 
     args := System args rest
