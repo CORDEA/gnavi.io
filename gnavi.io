@@ -63,11 +63,15 @@ Gnavi := Object clone do(
         url fetch
     )
 
+    format := method(dic,
+        dic at("name") .. "\n\t" .. dic at("address") .. "\n\t" .. dic at("url")
+    )
+
     parse := method(json,
         rests := json at("rest")
         if(rests type == "List",
-            rests map(v, (v at("name")) .. "\n\t" .. v at("address") .. "\n\t" .. v at("url")),
-            list(rests at("name") .. "\n\t" .. rests at("address") .. "\n\t" .. rests at("url"))
+            rests map(v, format(v)),
+            list(format(rests))
         )
     )
 )
